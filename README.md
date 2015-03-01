@@ -18,8 +18,8 @@ Review the [documentation for the Drupal Remote API Driver](https://github.com/k
 ### Installation
 1. Download and install the module on the Drupal site you wish to test remotely.
 2. Create a new user specifically for testing and assign it the BehatAPI user role.
-3. Check the default permissions to confirm they are acceptable for your site and your usecase. Be sure you have reviewed the [Security Notes](https://github.com/kirschbaum/drupal-behat-remote-api-driver/doc/security_notes.md).
-4. If you haven't already, [install the Drupal Remote API Driver](https://github.com/kirschbaum/drupal-behat-remote-api-driver/doc/security_notes.md) and start running remote tests!
+3. Check the default permissions to confirm they are acceptable for your site and your usecase. Be sure you have reviewed the [Security Notes](https://github.com/kirschbaum/drupal-behat-remote-api-driver/blob/master/doc/security_notes.md#security-notes).
+4. If you haven't already, [install the Drupal Remote API Driver](https://github.com/kirschbaum/drupal-behat-remote-api-driver/blob/master/doc/installation.md#installation) and start running remote tests!
 
 ### Roadmap
 * Allow management of user regex pattern from a configuration page.
