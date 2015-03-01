@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Behat Drupal Extension Remote API Client - install file.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupalextension_remote_install() {
+
+  // Create the role if necessary.
+  $role = user_role_load_by_name('BehatAPI');
+  if (!$role) {
+    $role = new stdClass();
+    $role->name = 'BehatAPI';
+    user_role_save($role);
+  }
+
+  // Add the permissions to the role.
+  $permissions = array(
+      'access extended drupal remote api data',
+      'access resource file',
+      'access resource node',
+      'access resource taxonomy_term',
+      'access resource taxonomy_vocabulary',
+      'access resource user',
+      'administer nodes',
+      'administer users',
+  );
+
+  // @TODO Only modify permissions if role doesn't already exist.
+  user_role_grant_permissions($role->rid, $permissions);
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function drupalextension_remote_uninstall() {
+  variable_del('drupalextension_remote_drupal_auth_user_regex');
+}
+
+/**
+ * Set the user name regex to accept all for backwards compatibility.
+ */
+function drupalextension_remote_update_7100() {
+  // Set the user name regex to accept all.
+  variable_set('drupalextension_remote_drupal_auth_user_regex', '/.*/');
+}

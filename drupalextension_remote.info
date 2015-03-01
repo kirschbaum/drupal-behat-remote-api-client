@@ -1,0 +1,7 @@
+name = Behat Drupal Extension Remote API Client
+description = Adds various helper functionality that the Behat Remote API Driver needs in order to work properly.
+core = 7.x
+version = 7.x-1.0
+project = drupalextension_remote
+files[] = drupalextension_remote.test
+dependencies[] = restws
